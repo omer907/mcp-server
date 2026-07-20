@@ -1,6 +1,7 @@
 {
   "name": "@themelt/mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "mcpName": "io.github.omer907/melt-mcp-server",
   "description": "Melt MCP server — exposes value-leak discovery (melt_analyze_value_vectors, melt_estimate_annual_leak) and a lead-capture handoff (melt_request_scan) to Claude, Cursor, GitHub Copilot, and any MCP-compatible agent.",
   "type": "module",
   "main": "dist/index.js",
