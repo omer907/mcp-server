@@ -1,0 +1,44 @@
+{
+  "name": "@themelt/mcp-server",
+  "version": "0.1.0",
+  "description": "Melt MCP server — exposes the Melt Financial Impact Engine (Feature Waste, DSO, Contract Cycle, Win Rate) and the Asymmetric Workflow discovery primitive to Claude, Cursor, GitHub Copilot, and any MCP-compatible agent.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "melt-mcp-server": "dist/index.js"
+  },
+  "homepage": "https://themelt.ai",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:http": "node dist/httpServer.js",
+    "dev": "tsc --watch",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "pretest": "npm run build",
+    "test": "node test/e2e.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-roi",
+    "enterprise-ai",
+    "melt"
+  ],
+  "author": "Melt AI",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
