@@ -1,4 +1,5 @@
 node_modules/
 dist/
 leads.jsonl
+analytics.jsonl
 *.log

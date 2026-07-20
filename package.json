@@ -1,7 +1,7 @@
 {
   "name": "@themelt/mcp-server",
   "version": "0.1.0",
-  "description": "Melt MCP server — exposes the Melt Financial Impact Engine (Feature Waste, DSO, Contract Cycle, Win Rate) and the Asymmetric Workflow discovery primitive to Claude, Cursor, GitHub Copilot, and any MCP-compatible agent.",
+  "description": "Melt MCP server — exposes value-leak discovery (melt_analyze_value_vectors, melt_estimate_annual_leak) and a lead-capture handoff (melt_request_scan) to Claude, Cursor, GitHub Copilot, and any MCP-compatible agent.",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -28,8 +28,12 @@
     "melt"
   ],
   "author": "Melt AI",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omer907/mcp-server.git"
+  },
   "engines": {
     "node": ">=18"
   },

@@ -125,13 +125,10 @@ snippet), so `melt_request_scan` reaches the real Melt pipeline with zero
 configuration. If HubSpot submission fails for any reason, requests fall back
 to `mcp-server/leads.jsonl` (gitignored) instead of being lost.
 
-## Publishing (not yet done)
+## Publishing
 
-This package is `"private": true` in `package.json` on purpose — publishing to
-public npm is a one-way door. Before flipping that and running `npm publish`:
-
-1. Confirm `@themelt` is the final npm org/scope (create it at
-   npmjs.com/org if it doesn't exist yet).
-2. Confirm the tool descriptions above still match reality.
-3. Run `npm run build` and smoke-test with `npm run inspect`.
-4. Get explicit sign-off — this is a public, irreversible-in-practice release.
+Published under the `@themelt` npm org (created 2026-07-20, owner `omer_melt`)
+under the MIT license. `npm publish` is effectively one-way — npm allows
+unpublishing within 72 hours but strongly discourages it and blocks it
+entirely once a package has dependents, so treat any published version as
+permanent.
