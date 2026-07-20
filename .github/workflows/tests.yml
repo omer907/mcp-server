@@ -3,6 +3,7 @@ name: Tests
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -12,8 +13,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          # No cache: npm here — package-lock.json is gitignored in this repo
-          # (deliberate choice), so there's no lockfile in a fresh checkout for
-          # actions/setup-node to key a cache off of.
+          cache: "npm"
       - run: npm install
       - run: npm test
