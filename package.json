@@ -17,6 +17,7 @@
     "start:http": "node dist/httpServer.js",
     "dev": "tsc --watch",
     "inspect": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "build:mcpb": "bash scripts/build-mcpb.sh",
     "pretest": "npm run build",
     "test": "node test/e2e.mjs"
   },
@@ -42,6 +43,7 @@
     "zod": "^3.24.0"
   },
   "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2",
     "@types/node": "^22.10.0",
     "typescript": "^5.7.0"
   }

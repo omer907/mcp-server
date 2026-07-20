@@ -1,0 +1,48 @@
+{
+  "manifest_version": "0.3",
+  "name": "melt-mcp-server",
+  "display_name": "Melt — Value Leak Discovery",
+  "version": "0.1.0",
+  "description": "Value-leak discovery and lead capture for Claude, Cursor, and any MCP-compatible client — find where AI and software value is leaking out of your org, in dollars.",
+  "long_description": "Melt exposes value-leak discovery directly to your agent: a free Stage-1 Sandbox estimator (melt_analyze_value_vectors), a calculator for quantifying an already-identified leak pattern in dollars/year (melt_estimate_annual_leak, matching Melt's real \"Anatomy of a Scan\" methodology), and a lead-capture handoff (melt_request_scan) for moving from a directional estimate to a real, log-verified finding. Zero configuration required — works immediately after install.",
+  "author": {
+    "name": "Melt AI",
+    "url": "https://themelt.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omer907/mcp-server"
+  },
+  "homepage": "https://themelt.ai",
+  "license": "MIT",
+  "keywords": ["mcp", "ai-roi", "enterprise-ai", "value-leak", "melt"],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"]
+    }
+  },
+  "tools": [
+    {
+      "name": "melt_analyze_value_vectors",
+      "description": "Free Stage-1 Sandbox estimator — estimates where AI/software value is leaking in a department from headcount, labor cost, and dominant unstructured-input type. Also answers what earlier Melt materials called 'AI ROI leverage'."
+    },
+    {
+      "name": "melt_estimate_annual_leak",
+      "description": "Quantifies an already-identified value-leak pattern in dollars/year, matching Melt's real scan methodology. Also covers what earlier materials called 'Feature Waste Dollar Amount'."
+    },
+    {
+      "name": "melt_request_scan",
+      "description": "Lead-capture handoff — requests a real, log-verified Melt scan. Earlier materials called this a 'Thermal Scan'."
+    }
+  ],
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

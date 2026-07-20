@@ -3,3 +3,6 @@ dist/
 leads.jsonl
 analytics.jsonl
 *.log
+mcpb-build/server/
+mcpb-build/node_modules/
+*.mcpb

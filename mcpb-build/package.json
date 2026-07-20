@@ -1,0 +1,10 @@
+{
+  "name": "themelt-mcp-server-bundle",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.24.0"
+  }
+}

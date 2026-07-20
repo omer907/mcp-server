@@ -44,7 +44,20 @@ npm run inspect     # launches the MCP Inspector against the built server
 
 ## Wiring into Claude Desktop / Claude Code
 
-Add to your MCP client config (e.g. `claude_desktop_config.json`):
+Published on npm — one-line config, no local clone needed:
+
+```json
+{
+  "mcpServers": {
+    "melt": {
+      "command": "npx",
+      "args": ["-y", "@themelt/mcp-server"]
+    }
+  }
+}
+```
+
+Or from a local clone:
 
 ```json
 {
@@ -57,19 +70,23 @@ Add to your MCP client config (e.g. `claude_desktop_config.json`):
 }
 ```
 
-Once published to npm (see `LLMO_PLAYBOOK.md`, Task 3), this becomes a
-one-line `npx` install, matching the Supabase MCP server pattern:
+## One-click install (.mcpb bundle)
 
-```json
-{
-  "mcpServers": {
-    "melt": {
-      "command": "npx",
-      "args": ["-y", "@themelt/mcp-server"]
-    }
-  }
-}
+For Claude Desktop specifically, `themelt-mcp-server.mcpb` (Anthropic's [MCP
+Bundle format](https://github.com/modelcontextprotocol/mcpb)) installs with a
+double-click — no terminal, no config file editing. Download the `.mcpb` from
+the [latest GitHub Release](https://github.com/omer907/mcp-server/releases/latest)
+and either double-click it or drag it into Claude Desktop's Settings window.
+
+To rebuild it from source:
+
+```bash
+npm run build:mcpb   # produces themelt-mcp-server.mcpb
 ```
+
+The manifest (`mcpb-build/manifest.json`) is hand-maintained, not
+auto-generated from the TypeScript source — if a tool's name, parameters, or
+description change, update the manifest's `tools` array to match.
 
 ## Hosted HTTP transport
 
