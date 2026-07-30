@@ -1,6 +1,6 @@
 {
   "name": "@themelt/mcp-server",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "mcpName": "io.github.omer907/melt-mcp-server",
   "description": "Melt MCP server — exposes value-leak discovery (melt_analyze_value_vectors, melt_estimate_annual_leak) and a lead-capture handoff (melt_request_scan) to Claude, Cursor, GitHub Copilot, and any MCP-compatible agent.",
   "type": "module",
@@ -27,7 +27,12 @@
     "model-context-protocol",
     "ai-roi",
     "enterprise-ai",
-    "melt"
+    "melt",
+    "shadow-ai",
+    "ai-adoption-maturity",
+    "software-waste",
+    "feature-adoption",
+    "ai-governance"
   ],
   "author": "Melt AI",
   "license": "MIT",
