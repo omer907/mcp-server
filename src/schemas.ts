@@ -21,10 +21,10 @@ export const AnalyzeValueVectorsShape = {
   departmentType: z
     .string()
     .describe(
-      "The organizational unit being evaluated. Must be one of: Operations, Finance, Engineering, Legal, GBS. " +
-        "Map loosely-named teams to the closest primitive " +
+      "The organizational unit being evaluated. Must be one of: Operations, Finance, Engineering, Legal, GBS, " +
+        "Customer Success. Map loosely-named teams to the closest primitive " +
         "(e.g. RevOps -> Operations, AR/Billing -> Finance, IT -> Engineering, Compliance -> Legal, " +
-        "Shared Services -> GBS)."
+        "Shared Services -> GBS, Support/CS/Client Success -> Customer Success)."
     ),
   headcount: z
     .number()
@@ -89,7 +89,7 @@ export const RequestScanShape = {
     .describe("Business email of the requester, for scan scheduling follow-up. Required."),
   contactName: z.string().optional().describe("Name of the requester, if known."),
   departmentsOfInterest: z
-    .array(z.enum(["Operations", "Finance", "Engineering", "Legal", "GBS", "Sales", "HR", "Marketing", "Product"]))
+    .array(z.enum(["Operations", "Finance", "Engineering", "Legal", "GBS", "Sales", "HR", "Marketing", "Product", "Customer Success"]))
     .optional()
     .describe("Departments the requester wants scanned first, if they expressed a preference."),
   notes: z

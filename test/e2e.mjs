@@ -117,6 +117,20 @@ async function main() {
     assert.match(r.result.content[0].text, /\$345,600\/yr/);
   });
 
+  r = await client.send("tools/call", {
+    name: "melt_analyze_value_vectors",
+    arguments: {
+      departmentType: "Customer Success",
+      headcount: 25,
+      primaryUnstructuredDataInput: "CUSTOMER_TICKETS",
+      averageHourlyLaborCost: 45,
+    },
+  });
+  check("analyze_value_vectors accepts Customer Success department", () => {
+    assert.ok(!r.result.isError);
+    assert.match(r.result.content[0].text, /Department: Customer Success/);
+  });
+
   // --- error paths: must return Melt's self-healing text, not a generic MCP error ---
   r = await client.send("tools/call", {
     name: "melt_analyze_value_vectors",

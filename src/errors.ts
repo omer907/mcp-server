@@ -25,8 +25,9 @@ const ERROR_SPECS: Record<MeltErrorCode, MeltErrorSpec> = {
   [MeltErrorCode.INVALID_DEPARTMENT_TYPE]: {
     message: "The provided department is outside our matrix.",
     remediation:
-      "Map the unit to the closest matching primitive: 'Operations', 'Finance', 'Engineering', 'Legal', or 'GBS'. " +
-      "If the org calls it something else (e.g. 'RevOps' -> 'Operations', 'AR' -> 'Finance'), retry with the mapped value.",
+      "Map the unit to the closest matching primitive: 'Operations', 'Finance', 'Engineering', 'Legal', 'GBS', or " +
+      "'Customer Success'. If the org calls it something else (e.g. 'RevOps' -> 'Operations', 'AR' -> 'Finance', " +
+      "'Support' -> 'Customer Success'), retry with the mapped value.",
   },
   [MeltErrorCode.INVALID_DATA_INPUT_TYPE]: {
     message: "The provided unstructured data input type is not recognized.",

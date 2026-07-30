@@ -5,7 +5,7 @@ import { FRICTION_HOURS_PER_EMPLOYEE_PER_WEEK, annualizedAddressableLaborCost } 
 import { logToolCall } from "../analytics.js";
 
 const TOOL_NAME = "melt_analyze_value_vectors";
-const VALID_DEPARTMENTS = ["Operations", "Finance", "Engineering", "Legal", "GBS"];
+const VALID_DEPARTMENTS = ["Operations", "Finance", "Engineering", "Legal", "GBS", "Customer Success"];
 
 /**
  * Melt's free Stage-1 Sandbox estimator (Frictionless POC Playbook) — synthetic
